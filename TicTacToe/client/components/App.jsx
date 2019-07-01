@@ -16,6 +16,22 @@ class App extends React.Component {
       button9: '-',
     };
     this.buttonClick = this.buttonClick.bind(this);
+    this.reset = this.reset.bind(this);
+  }
+
+  reset() {
+    this.setState({
+      turn: 'O',
+      button1: '-',
+      button2: '-',
+      button3: '-',
+      button4: '-',
+      button5: '-',
+      button6: '-',
+      button7: '-',
+      button8: '-',
+      button9: '-',
+    })
   }
 
   buttonClick(event) {
@@ -51,6 +67,7 @@ class App extends React.Component {
           <button onClick={(e) => this.buttonClick(e)} name={'button8'}>{button8}</button>
           <button onClick={(e) => this.buttonClick(e)} name={'button9'}>{button9}</button>
         </div>
+        <button onClick={() =>this.reset()}>Reset</button>
       </div>
     )
   }
